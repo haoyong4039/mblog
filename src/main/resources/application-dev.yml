@@ -1,0 +1,33 @@
+spring:
+    datasource:
+        #schema: classpath*:scripts/schema.sql
+        #continue-on-error: false
+        #sql-script-encoding: utf-8
+        driver-class-name: com.mysql.cj.jdbc.Driver
+#        url: jdbc:mysql://192.168.7.200/db_mblog?useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2B8
+        url: jdbc:mysql://47.114.144.224:3306/db_mblog?useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2B8
+        username: root
+        password: 1234
+
+#        url: jdbc:mysql://rm-uf6542nnexx16xw06.mysql.rds.aliyuncs.com/db_mblog?useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2B8
+#        username: wl_wlink
+#        password: Mo#(H(89S99(0O0*
+
+#        url: jdbc:mysql://47.114.144.224:3306/db_mblog?useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2B8
+#        username: root
+#        password: 1234
+
+    flyway:
+        enabled: true
+    jpa:
+        database: mysql
+        show-sql: false
+        hibernate:
+            ddl-auto: update
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        properties:
+            hibernate.format_sql: true
+            hibernate.naming.physical-strategy: org.hibernate.scripts.model.naming.PhysicalNamingStrategyStandardImpl
+            hibernate.cache.use_second_level_cache: false
+            hibernate.search.default.directory_provider: filesystem
+            hibernate.search.default.indexBase: ${site.location}/storage/indexes
