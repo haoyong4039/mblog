@@ -49,6 +49,7 @@ public class ApiController extends BaseController {
 
     @RequestMapping("/posts")
     public Page<PostVO> posts(HttpServletRequest request) {
+        System.out.println(66666);
         String order = ServletRequestUtils.getStringParameter(request, "order", Consts.order.NEWEST);
         int channelId = ServletRequestUtils.getIntParameter(request, "channelId", 0);
         int agentState = request.getSession().getAttribute("agentState") == null ? 0 : Integer.valueOf(request.getSession().getAttribute("agentState")+"");

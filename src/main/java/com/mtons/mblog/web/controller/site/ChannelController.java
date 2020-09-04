@@ -50,6 +50,7 @@ public class ChannelController extends BaseController {
 	@RequestMapping("/channel/{id}")
 	public String channel(@PathVariable Integer id, ModelMap model,
 			HttpServletRequest request) {
+		System.out.println(77777);
 		// init params
 //		String order = ServletRequestUtils.getStringParameter(request, "order", Consts.order.NEWEST);
 	    String tag = ServletRequestUtils.getStringParameter(request, "tag", "all");
